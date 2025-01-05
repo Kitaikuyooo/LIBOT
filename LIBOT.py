@@ -31,7 +31,7 @@ def check_invoice(invoice_number):
     # 從網址取得 XML 資料
     url = 'https://invoice.etax.nat.gov.tw/invoice.xml'
     try:
-        response = requests.get(url, timeout=15, verify=False)
+        response = requests.get(url, timeout=20, verify=False)
         if response.status_code == 200:
             tree = ET.fromstring(response.text)
             item = tree.find('.//item')
